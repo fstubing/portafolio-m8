@@ -1,0 +1,135 @@
+{{>navbar}}
+
+<div class="container text-center detalle-producto">
+  {{#each arrayProducto}}
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide container mt-3"
+        >
+          <div class="carousel-indicators text-bg-info">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../public/img/{{imagen1}}" />
+            </div>
+            <div class="carousel-item">
+              <img src="../public/img/{{imagen2}}" />
+            </div>
+            <div class="carousel-item">
+              <img src="../public/img/{{imagen3}}" />
+            </div>
+            <div class="carousel-item">
+              <img src="../public/img/{{imagen2}}" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-info"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-info"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="row mt-3">
+          <h5>{{marca}}</h5>
+        </div>
+        <div class="row">
+          <h2>{{nombre}}</h2>
+        </div>
+        <div class="row">
+          <h2><b>$ {{precio}} CLP</b></h2>
+        </div>
+        <div class="row">
+          <h6>Descripción</h6>
+          <p>{{descripcion}}</p>
+        </div>
+        <div class="row">
+          <h6>Unidades Disponibles</h6>
+          <p>{{stock}}</p>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary" onclick="addToCart('{{id}}','{{stock}}')">AGREGAR
+            AL CARRITO</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+    <footer id="pie-de-pagina">
+      <div>
+        <p>© 2023 LA PIZZERIA</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/default">Términos</a></li>
+          <li><a href="/default">Privacidad</a></li>
+          <li><a href="/default">Seguridad</a></li>
+          <li><a href="/default">Contacto</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"
+></script>
+<script
+  src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"
+></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../public/js/login.js"></script>
+<script src="../public/js/producto.js"></script>

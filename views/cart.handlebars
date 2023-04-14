@@ -1,0 +1,86 @@
+{{>navbar}}
+
+
+    <section class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <h3>CARRITO DE COMPRAS</h3>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          {{#if carrito}}
+          <button class="btn btn-danger" id="btn-vaciar">Vaciar Carro</button>
+          {{/if}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" id="productos-carrito">
+          {{#each carrito}}
+          <div class="row m-3 p-carro">
+            <div class="col-sm-12 col-md-4"><img class="img-carro" src="../public/img/{{imagen1}}" alt="{{nombre}}"></div>
+            <div class="col-sm-6 col-md-4">
+              <p>{{nombre}}</p>
+              <p>Stock: {{stock}}</p>
+              <p>Precio Unitario ${{precio}}</p>
+              <P>
+                <button onclick="restar('{{id}}')" class="btn btn-info">-</button>
+                <input type="number" value="{{cantidad}}" min="0" max="{{stock}}" id="cantidad-carro">
+                <button onclick="sumar('{{id}}')" class="btn btn-info my-1">+</button>
+              </P>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <p>Precio <b>${{total}}</b></p>
+            </div>
+          </div>
+          {{else}}
+          <h3 class="text-center">NO HAY PRODUCTOS EN EL CARRO</h3>
+          {{/each}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          {{!-- <form action="" method="get">
+            <label for="cupon">Cupón de descuento</label>
+            <input type="" id="input-cupon">
+            <input type="button" value="aplicar" class="btn btn-success" id="btn-descuento">
+          </form> --}}
+        </div>
+        <div class="col-sm-12 col-md-4">
+          {{#each subt}}
+          <p class="text-white bg-dark">Total: $<span id="subtotal">{{total}}</span></p>
+    
+          {{!-- <p id="descuento" class="text-success"></p>
+          <h5 id="precio-total"></h5> --}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-8">
+          <button class="btn btn-warning my-1"><a href="/">continuar comprando</a></button>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <button class="btn btn-primary my-1" onclick="btnComprarAhora('{{id}}')">Finalizar compra</button>
+        </div>{{/each}}
+      </div>
+      <div class="row"></div>
+
+    </section>
+
+    <footer id="pie-de-pagina">
+      <div>
+        <p>© 2023 LA PIZZERIA</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/default">Términos</a></li>
+          <li><a href="/default">Privacidad</a></li>
+          <li><a href="/default">Seguridad</a></li>
+          <li><a href="/default">Contacto</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../public/js//login.js"></script>
+    <script src="../public/js/cart-app.js" ></script>  

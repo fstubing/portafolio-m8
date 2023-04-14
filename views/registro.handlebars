@@ -1,0 +1,45 @@
+{{>navbar}}
+
+<main class="container py-5">
+    <h2 class="mb-5">CREAR CUENTA EN LA PIZZERIA</h2>
+    <form class="row g-3" id="registroForm" encType="multipart/form-data">
+        <div class="col-12 col-md-6">
+            <label for="nombreRegistro" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreRegistro" name="nombreRegistro" required>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="apellidoRegistro" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellidoRegistro" name="apellidoRegistro" required>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="emailRegistro" class="form-label">Email</label>
+            <div class="input-group">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="email" class="form-control" id="emailRegistro" name="emailRegistro"
+                    aria-describedby="inputGroupPrepend" required>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <label for="claveRegistro" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="claveRegistro" name="claveRegistro" required>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="aceptoTyC" id="tyc" required>
+                <label class="form-check-label" for="tyc">
+                    Acepto <a href="./default" target="_blank">Términos y Condiciones</a>
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Registrarse</button>
+        </div>
+    </form>
+
+</main>
+
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../public/js/registro.js"></script>
+<script src="../public/js/login.js"></script>
