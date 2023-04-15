@@ -107,7 +107,8 @@ function btnMostrarVentas(id) {
                              </tr>
                              `
                  });
-                 document.querySelector("#staticBackdropLabel").innerText = `Detalle de Venta ID ${id}`;
+                 document.querySelector("#staticBackdropLabel").innerText = `Detalle de Venta ID ${id}
+                 Productos comprados:`;
                  document.querySelector("#tableHeaders").innerHTML = template1; 
                  document.querySelector("#tableBody").innerHTML = template2;
                 }

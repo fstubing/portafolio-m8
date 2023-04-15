@@ -21,7 +21,7 @@ module.exports.controllerHome= async (req, res) => {
         });
 
         res.render("home", {
-            productos
+            productos, title: 'Home'
         });
     } catch (error) {
         res.status(500).render("home", {message : "Error al desplegar página"})
@@ -37,7 +37,7 @@ module.exports.controllerProductos = async (req, res) => {
         let arrayProducto = [] 
         arrayProducto.push(producto)
         res.render("detalleProducto", {
-            arrayProducto
+            arrayProducto, title: 'Detalle del Producto'
         });
     } catch (error) {
         res.status(500).render("detalleProducto", {message : "Error al desplegar página"})
@@ -98,7 +98,8 @@ module.exports.controllerCarrito = async (req, res) => {
 
         res.render("cart", {
             carrito: productos,
-            subt: [subtotal]
+            subt: [subtotal],
+            title: 'Carro de Compras'
         });
     } catch (error) {
         res.status(500).render("cart", {message : "Error al desplegar página"})
@@ -114,7 +115,7 @@ module.exports.controllerInventario = async (req, res) => {
             ]
         });
         res.render("inventory", {
-            productos
+            productos, title: 'Inventario'
         });      
     } catch (error) {
         res.status(500).render("inventory", {message : "Error al desplegar página"})
@@ -134,7 +135,7 @@ module.exports.getUserByName = async (req, res) => {
         if (userSearch === null) {
             res.status(400).send("Usuario no encontrado")
         } else {res.render("perfil", {
-            arrayUser
+            arrayUser, title: 'Mi Perfil'
             });
         }
     } catch (error) {
@@ -155,7 +156,7 @@ module.exports.getAdminByName = async (req, res) => {
         if (userSearch === null) {
             res.status(400).send("Usuario no encontrado")
         } else {res.render("usuario", {
-            arrayUser
+            arrayUser, title: 'Mi Perfil'
             });
         }
     } catch (error) {
@@ -165,7 +166,7 @@ module.exports.getAdminByName = async (req, res) => {
 
 module.exports.controllerNotFound = async (req, res) => {
     try {
-        res.render("default");
+        res.render("default", {title: 'En construccion'});
         
     } catch (error) {
         res.status(500).render("default", {message : "Error al desplegar página"})
@@ -174,7 +175,7 @@ module.exports.controllerNotFound = async (req, res) => {
 
 module.exports.controllerBuscador = async (req, res) => {
     try {
-        res.render("buscador");
+        res.render("buscador", {title: 'Buscador'});
         
     } catch (error) {
         res.status(500).render("buscador", {message : "Error al desplegar página"})
@@ -183,7 +184,7 @@ module.exports.controllerBuscador = async (req, res) => {
 
 module.exports.controllerRegistro = async (req, res) => {
     try {
-        res.render("registro");
+        res.render("registro", {title: 'Registro de Usuario'});
         
     } catch (error) {
         res.status(500).render("registro", {message: "Error al desplegar página"})

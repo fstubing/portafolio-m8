@@ -38,6 +38,11 @@ module.exports = {
             notEmpty: true
         }
       },
+      clase: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        defaultValue: "comprador"
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

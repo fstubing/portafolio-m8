@@ -1,15 +1,17 @@
 {{>navbar}}
 
 
-    <section class="container">
+    <section class="container" style="min-height: 60vh;">
+{{#if carrito}}
       <div class="row">
         <div class="col-sm-12 col-md-8">
           <h3>CARRITO DE COMPRAS</h3>
         </div>
+        
         <div class="col-sm-12 col-md-4">
-          {{#if carrito}}
+          
           <button class="btn btn-danger" id="btn-vaciar">Vaciar Carro</button>
-          {{/if}}
+          
         </div>
       </div>
       <div class="row">
@@ -31,8 +33,7 @@
               <p>Precio <b>${{total}}</b></p>
             </div>
           </div>
-          {{else}}
-          <h3 class="text-center">NO HAY PRODUCTOS EN EL CARRO</h3>
+
           {{/each}}
         </div>
       </div>
@@ -61,7 +62,14 @@
         </div>{{/each}}
       </div>
       <div class="row"></div>
-
+{{else}}
+<div class="d-flex flex-column mt-5">
+      <br><br><br><br>
+      <hr>
+      <h3 class="my-5 d-flex align-items-center justify-content-center">NO HAY PRODUCTOS EN EL CARRO</h3>
+      <hr>
+</div>
+{{/if}}
     </section>
 
     <footer id="pie-de-pagina">

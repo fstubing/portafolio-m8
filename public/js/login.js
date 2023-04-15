@@ -12,7 +12,7 @@ formularioLogin.addEventListener("submit", (event) => {
         alert("Usuario autenticado correctamente");
         localStorage.setItem("jwt", response.data.token);
       }
-      //location.href = "/";
+      location.href = "/";
     })
     .catch(function (error) {
       console.log(error);

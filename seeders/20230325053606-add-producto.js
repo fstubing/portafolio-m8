@@ -101,8 +101,30 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-
-
+      {
+        nombre: "CEPILLO DE BRONCE MANGO ALUMINIO 90",
+        marca: "Castelnuovo",
+        descripcion: "Cepillo de bronce con mango de aluminio 90 cm.",
+        precio: 47990,
+        stock: 15,
+        imagen1: "cepillo1.jpg",
+        imagen2: "cepillo2.jpg",
+        imagen3: "cepillo1.jpg",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        nombre: "Horno portátil para pizza",
+        marca: "Beef Maker",
+        descripcion: "Horno pizzero portátil. Diseño práctico y fácil de transportar. prepara deliciosas pizzas donde quiera que vayas.",
+        precio: 49990,
+        stock: 25,
+        imagen1: "588487-800-auto.webp",
+        imagen2: "588488-800-auto.jpg",
+        imagen3: "588489-800-auto.webp",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]
 
     return queryInterface.bulkInsert('Productos', productos);
